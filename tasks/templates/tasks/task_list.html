@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lista de Tarefas </h1>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Data de Criação</th>
+      <th scope="col">Data de Vencimento</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in  tasks %}
+      <tr>
+            <td>{{task.title}}</td>
+            <td>{{task.status}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.created_at}}</td>
+            <td>{{task.due_date}}</td>
+        </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+{% endblock  %}
+
